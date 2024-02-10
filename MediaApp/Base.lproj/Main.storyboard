@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ygd-op-vw2">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CameraViewController" customModule="MediaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Parent View">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46J-Jd-0wc" userLabel="Camera View">
+                                <rect key="frame" x="0.0" y="103" width="393" height="579"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UM6-Qf-uZD">
+                                <rect key="frame" x="311" y="753" width="52" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="photo.stack.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="t4D-3I-WzA" kind="presentation" identifier="Open Media" id="Wie-H7-OLc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPh-ly-Lim" userLabel="Record">
+                                <rect key="frame" x="171.66666666666666" y="753" width="50" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                <connections>
+                                    <action selector="onRecordPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="roh-bQ-DaT"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wso-X7-dV7">
+                                <rect key="frame" x="141" y="702" width="111" height="32"/>
+                                <segments>
+                                    <segment title="Photo"/>
+                                    <segment title="Video"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onRecordTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="gf9-EV-SrW"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipl-rP-1BW" userLabel="Switch Mode">
+                                <rect key="frame" x="30" y="753" width="56" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.triangle.2.circlepath.camera.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="onFlipCameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Epo-Lf-5Hi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dPh-ly-Lim" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ipl-rP-1BW" secondAttribute="trailing" constant="20" id="9MU-Fc-n0S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="46J-Jd-0wc" secondAttribute="trailing" id="LTE-7J-Ii1"/>
+                            <constraint firstItem="Ipl-rP-1BW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="RZz-rA-VhC"/>
+                            <constraint firstItem="dPh-ly-Lim" firstAttribute="top" secondItem="Wso-X7-dV7" secondAttribute="bottom" constant="20" id="Y4Z-ib-FOb"/>
+                            <constraint firstItem="46J-Jd-0wc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZCN-QB-KBy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dPh-ly-Lim" secondAttribute="bottom" constant="30" id="afP-pa-18G"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UM6-Qf-uZD" secondAttribute="trailing" constant="30" id="djz-1R-fAT"/>
+                            <constraint firstItem="Wso-X7-dV7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fbb-dw-63q"/>
+                            <constraint firstItem="Wso-X7-dV7" firstAttribute="top" secondItem="46J-Jd-0wc" secondAttribute="bottom" constant="20" id="hGd-UG-eUS"/>
+                            <constraint firstItem="UM6-Qf-uZD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dPh-ly-Lim" secondAttribute="trailing" constant="20" id="oGJ-N5-6Nt"/>
+                            <constraint firstItem="Ipl-rP-1BW" firstAttribute="centerY" secondItem="dPh-ly-Lim" secondAttribute="centerY" id="pbX-E6-45B"/>
+                            <constraint firstItem="UM6-Qf-uZD" firstAttribute="centerY" secondItem="dPh-ly-Lim" secondAttribute="centerY" id="qqi-wY-YG5"/>
+                            <constraint firstItem="46J-Jd-0wc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sBj-MG-xZJ"/>
+                            <constraint firstItem="dPh-ly-Lim" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xQB-06-m7b"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gtw-t0-BuX"/>
+                    <connections>
+                        <outlet property="cameraView" destination="46J-Jd-0wc" id="edH-1c-Dna"/>
+                        <outlet property="flipCameraButton" destination="Ipl-rP-1BW" id="5qO-Sc-0ha"/>
+                        <outlet property="openMediaButton" destination="UM6-Qf-uZD" id="XUp-m2-jO3"/>
+                        <outlet property="recordButton" destination="dPh-ly-Lim" id="aZZ-dH-ite"/>
+                        <outlet property="recordTypeSegmentedControl" destination="Wso-X7-dV7" id="AXG-V7-7RQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968.70229007633588" y="3.5211267605633805"/>
+        </scene>
+        <!--Media View Controller-->
+        <scene sceneID="56h-ah-Uep">
+            <objects>
+                <collectionViewController id="kTC-qN-phm" customClass="MediaViewController" customModule="MediaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4R5-du-upz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wsc-ZE-ysm">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MediaCell" id="FtK-Vh-I4j" customClass="MediaCell" customModule="MediaApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zwl-Sa-2cJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FTz-Hc-S8t">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="FTz-Hc-S8t" secondAttribute="trailing" id="5ww-2s-yBo"/>
+                                        <constraint firstAttribute="bottom" secondItem="FTz-Hc-S8t" secondAttribute="bottom" id="67L-e5-tYm"/>
+                                        <constraint firstItem="FTz-Hc-S8t" firstAttribute="leading" secondItem="zwl-Sa-2cJ" secondAttribute="leading" id="NYR-fH-QSL"/>
+                                        <constraint firstItem="FTz-Hc-S8t" firstAttribute="top" secondItem="zwl-Sa-2cJ" secondAttribute="top" id="ce8-Sx-DWX"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imageView" destination="FTz-Hc-S8t" id="fmf-89-yMr"/>
+                                    <segue destination="cKI-E7-Sxj" kind="presentation" identifier="Photo Video Open" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="hvM-vk-Qqr"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="kTC-qN-phm" id="CU8-4y-YY4"/>
+                            <outlet property="delegate" destination="kTC-qN-phm" id="Uuv-Ll-bYM"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="V8r-7a-JBq"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUL-D2-MP1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2906.1068702290077" y="25.35211267605634"/>
+        </scene>
+        <!--Photo Video View Controller-->
+        <scene sceneID="Bvl-ek-Eq2">
+            <objects>
+                <viewController id="cKI-E7-Sxj" customClass="PhotoVideoViewController" customModule="MediaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JQn-O1-TyD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyY-vd-w31" userLabel="Video View">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHZ-qb-6om">
+                                <rect key="frame" x="0.0" y="722" width="393" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Qom-4a-T13"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="j7d-wg-fgg" kind="embed" destinationCreationSelector="emberSwiftUIView:" id="sWA-j0-pdq"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aR4-Hw-Bxr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yyY-vd-w31" firstAttribute="top" secondItem="aR4-Hw-Bxr" secondAttribute="top" id="2dC-iO-EOS"/>
+                            <constraint firstItem="LHZ-qb-6om" firstAttribute="leading" secondItem="aR4-Hw-Bxr" secondAttribute="leading" id="IQP-o4-R7D"/>
+                            <constraint firstItem="aR4-Hw-Bxr" firstAttribute="trailing" secondItem="yyY-vd-w31" secondAttribute="trailing" id="ITL-dM-7MQ"/>
+                            <constraint firstItem="aR4-Hw-Bxr" firstAttribute="trailing" secondItem="LHZ-qb-6om" secondAttribute="trailing" id="VyG-Ve-VQp"/>
+                            <constraint firstItem="yyY-vd-w31" firstAttribute="leading" secondItem="aR4-Hw-Bxr" secondAttribute="leading" id="aSM-zT-U4q"/>
+                            <constraint firstItem="aR4-Hw-Bxr" firstAttribute="bottom" secondItem="LHZ-qb-6om" secondAttribute="bottom" constant="30" id="f8o-Q0-aNd"/>
+                            <constraint firstItem="LHZ-qb-6om" firstAttribute="top" secondItem="yyY-vd-w31" secondAttribute="bottom" id="sDF-Qi-nBB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ibs-4V-w70"/>
+                    <connections>
+                        <outlet property="rootView" destination="JQn-O1-TyD" id="6mi-1c-nrG"/>
+                        <outlet property="videoControlsView" destination="LHZ-qb-6om" id="MQC-sS-2iA"/>
+                        <outlet property="videoView" destination="yyY-vd-w31" id="hjI-82-NCT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFl-hS-MfT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3989" y="25"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="pz5-yn-JAu">
+            <objects>
+                <hostingController id="j7d-wg-fgg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbt-QF-rTS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4944" y="36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="05R-Cg-9JO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ygd-op-vw2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kkB-Wh-Aec">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wPh-JC-ZZ8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kr1-vx-Ffy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41.984732824427482" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UJh-We-Qal">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t4D-3I-WzA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5lO-47-QAR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kTC-qN-phm" kind="relationship" relationship="rootViewController" id="Eau-2Y-jY2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="86d-i2-y4Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1979.3893129770991" y="25.35211267605634"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.triangle.2.circlepath.camera.fill" catalog="system" width="128" height="93"/>
+        <image name="circle" catalog="system" width="128" height="123"/>
+        <image name="photo.stack.fill" catalog="system" width="126" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
